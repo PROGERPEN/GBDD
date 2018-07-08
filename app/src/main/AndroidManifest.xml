@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstrunActivity"></activity>
+        <activity
+            android:name=".FirstrunActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".RegnumberActivity"></activity>
     </application>
 
 </manifest>
