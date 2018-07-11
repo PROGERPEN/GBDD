@@ -18,8 +18,15 @@
         </activity>
         <activity
             android:name=".FirstrunActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-        <activity android:name=".RegnumberActivity"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".RegnumberActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".CTCnumberActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".PravaActivity" />
+        <activity android:name=".IntoActivity"></activity>
     </application>
 
 </manifest>
