@@ -13,6 +13,7 @@ public class CTCnumberActivity extends AppCompatActivity {
 
     EditText editText;
     Button button;
+    Button button2;
 
     static String CTCnumber;
 
@@ -34,6 +35,15 @@ public class CTCnumberActivity extends AppCompatActivity {
                 SharedPreferences.Editor editPref = pref.edit();
                 editPref.putString("CTCnumber", CTCnumber);
                 editPref.commit();
+                Intent intent = new Intent(context, PravaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(context, PravaActivity.class);
                 startActivity(intent);
             }

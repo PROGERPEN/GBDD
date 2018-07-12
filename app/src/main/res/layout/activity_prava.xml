@@ -66,6 +66,7 @@
                     android:textColor="#6c63c7"
                     android:textSize="15sp"
                     android:layout_marginLeft="20dp"
+                    android:id="@+id/button2"
                     />
 
                 <Button

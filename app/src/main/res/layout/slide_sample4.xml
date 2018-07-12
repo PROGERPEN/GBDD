@@ -4,35 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wt_background"
-    android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-    android:paddingBottom="60dp">
+    android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="60dp">
+
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Получайте"
-            android:layout_weight="3"
+            android:text="Получайте квитанцию, как в банке"
+            android:layout_weight="4"
             android:gravity="center"
             android:layout_gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
-            android:layout_marginTop="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="push-уведомления о новых штрафах"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:layout_marginTop="-40dp"
+            android:layout_marginTop="-20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"/>
 
@@ -41,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:background="@drawable/wt_push_pad"
+            android:background="@drawable/wt_bill"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp" />
 

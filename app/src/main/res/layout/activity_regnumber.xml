@@ -46,7 +46,7 @@
             android:textSize="27sp"
             android:id="@+id/edittext1"
             android:textColorHint="#999696"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,6 +66,7 @@
                 android:textColor="#6c63c7"
                 android:textSize="15sp"
                 android:layout_marginLeft="20dp"
+                android:id="@+id/button2"
                 />
 
             <Button

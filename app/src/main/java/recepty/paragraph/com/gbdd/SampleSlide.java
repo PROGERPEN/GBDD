@@ -1,5 +1,6 @@
 package recepty.paragraph.com.gbdd;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -37,4 +38,6 @@ public class SampleSlide extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(layoutResId, container, false);
     }
+
+
 }

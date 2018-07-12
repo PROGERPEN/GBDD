@@ -9,10 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import static recepty.paragraph.com.gbdd.MainActivity.MY_SETTINGS;
+
 public class PravaActivity extends AppCompatActivity {
 
     EditText editText;
     Button button;
+    Button button2;
 
     static String Pravanumber;
 
@@ -20,6 +23,9 @@ public class PravaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prava);
+
+        final SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
+                Context.MODE_PRIVATE);
 
         final Context context = this;
 
@@ -29,6 +35,9 @@ public class PravaActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor e = sp.edit();
+                e.putBoolean("hasVisited", true);
+                e.commit();
                 Pravanumber = editText.getText().toString();
                 SharedPreferences pref = getSharedPreferences("main", MODE_PRIVATE);
                 SharedPreferences.Editor editPref = pref.edit();
@@ -38,5 +47,20 @@ public class PravaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor e = sp.edit();
+                e.putBoolean("hasVisited", true);
+                e.commit();
+                Intent intent = new Intent(context, IntoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }

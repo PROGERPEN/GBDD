@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     TextView textView3;
 
     static final String MY_SETTINGS = "zapusk";
-    static String TCnumber;
-    static String CTCnumber;
-    static String Pravanumber;
+    static String TCnumber="";
+    static String CTCnumber="";
+    static String Pravanumber="";
 
     SharedPreferences sPref;
 
@@ -31,31 +31,38 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
                 Context.MODE_PRIVATE);
-        // проверяем, первый ли раз открывается программа
+
         boolean hasVisited = sp.getBoolean("hasVisited", false);
 
         if (!hasVisited) {
-            // выводим нужную активность
+
 
                 Intent intent = new Intent(this, FirstrunActivity.class);
                 startActivity(intent);
-
-            SharedPreferences.Editor e = sp.edit();
-            e.putBoolean("hasVisited", true);
-            e.commit(); // не забудьте подтвердить изменения
         }
-        if (hasVisited) {
+
             loadText1();
             loadText2();
             loadText3();
-        }
+
         textView1 = (TextView) findViewById(R.id.textview1);
         textView2 = (TextView) findViewById(R.id.textview2);
         textView3 = (TextView) findViewById(R.id.textview3);
-
-        textView1.setText(TCnumber);
-        textView2.setText(CTCnumber);
-        textView3.setText(Pravanumber);
+        if (!TCnumber.equals("")) {
+            textView1.setText(TCnumber);
+        }else {
+            textView1.setText("Данные не введены");
+        }
+        if (!CTCnumber.equals("")) {
+            textView2.setText(CTCnumber);
+        }else {
+            textView2.setText("Данные не введены");
+        }
+        if (!Pravanumber.equals("")) {
+            textView3.setText(Pravanumber);
+        }else {
+            textView3.setText("Данные не введены");
+        }
     }
 
     /*public void saveText1() {
@@ -70,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
         sPref = getSharedPreferences("main", MODE_PRIVATE);
         String savedText = sPref.getString("TCnumber", "Данные не введены");
         TCnumber = savedText;
+        if (TCnumber.equals("")) {
+            TCnumber = "Данные не введены";
+        }
     }
 
     /*private void saveText2() {
@@ -84,12 +94,18 @@ public class MainActivity extends AppCompatActivity {
         sPref = getSharedPreferences("main", MODE_PRIVATE);
         String savedText2 = sPref.getString("CTCnumber", "Данные не введены");
         CTCnumber = savedText2;
+        if (CTCnumber.equals("")) {
+            CTCnumber = "Данные не введены";
+        }
     }
 
     private void loadText3() {
         sPref = getSharedPreferences("main", MODE_PRIVATE);
         String savedText2 = sPref.getString("Pravanumber", "Данные не введены");
         Pravanumber = savedText2;
+        if (Pravanumber.equals("")) {
+            Pravanumber = "Данные не введены";
+        }
     }
 
     @Override
@@ -97,9 +113,21 @@ public class MainActivity extends AppCompatActivity {
         loadText1();
         loadText2();
         loadText3();
-        textView1.setText(TCnumber);
-        textView2.setText(CTCnumber);
-        textView3.setText(Pravanumber);
+        if (!TCnumber.equals("")) {
+            textView1.setText(TCnumber);
+        }else {
+            textView1.setText("Данные не введены");
+        }
+        if (!CTCnumber.equals("")) {
+            textView2.setText(CTCnumber);
+        }else {
+            textView2.setText("Данные не введены");
+        }
+        if (!Pravanumber.equals("")) {
+            textView3.setText(Pravanumber);
+        }else {
+            textView3.setText("Данные не введены");
+        }
         super.onResume();
     }
 

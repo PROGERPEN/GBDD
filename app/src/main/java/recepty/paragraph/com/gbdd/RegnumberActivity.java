@@ -14,6 +14,7 @@ public class RegnumberActivity extends AppCompatActivity {
 
     EditText editText;
     Button button;
+    Button button2;
 
     static String TCnumber;
 
@@ -35,6 +36,15 @@ public class RegnumberActivity extends AppCompatActivity {
                 SharedPreferences.Editor editPref = pref.edit();
                 editPref.putString("TCnumber", TCnumber);
                 editPref.commit();
+                Intent intent = new Intent(context, CTCnumberActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(context, CTCnumberActivity.class);
                 startActivity(intent);
             }
